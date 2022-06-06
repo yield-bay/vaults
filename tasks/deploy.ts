@@ -66,7 +66,7 @@ import sdv2 from "../raw/sdv2.json"
         if (f[1].split(" ")[0] !== "stable" && f[1].split(" ")[0] !== "vesolar" && f[1] !== "wmovr") {
             console.log("f", f[0], f[1], f[2], bayTreasury);
 
-            const vault = await bayVaultFactory.callStatic.deployVault(f[2], f[1] + " LP", f[1], bayTreasury);
+            const vault = await bayVaultFactory.deployVault(f[2], f[1] + " LP", f[1], bayTreasury);
             console.log("vault", vault);
 
             // const dvtxn = await bayVaultFactory.deployVault(f[2], f[1] + " LP", f[1], bayTreasury);

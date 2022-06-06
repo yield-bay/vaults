@@ -26,6 +26,24 @@ const config: HardhatUserConfig = {
       },
     },
   },
+  networks: {
+    localnet: {
+      url: "http://127.0.0.1:8545/",
+      chainId: 31337,
+    },
+    hardhat: {
+      initialBaseFeePerGas: 0,
+      forking: {
+        enabled: true,
+        url: "https://rpc.moonriver.moonbeam.network",
+      },
+    },
+    moonriver: {
+      url: "https://rpc.moonriver.moonbeam.network",
+      chainId: 1285,
+      // accounts: [process.env.PRIVATE_KEY as string],
+    },
+  },
   paths: {
     sources: "./src", // Use ./src rather than ./contracts as Hardhat expects
     cache: "./cache_hardhat", // Use a different cache for Hardhat than Foundry
